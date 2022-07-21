@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:primeiro_aplicativo/Componentes/drawer.dart';
 import 'package:primeiro_aplicativo/formulario.dart';
 import 'package:primeiro_aplicativo/home.dart';
 import 'package:primeiro_aplicativo/Componentes/tema.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
           '/':(context) => Login(),
           '/home':(context) => TelaInicial(),
           '/form':(context) => Formulario(),
+          '/drawer':(context) => CpDrawer() 
         },
       );
     });

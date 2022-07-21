@@ -20,7 +20,7 @@ class _LoginState extends State<Login> {
   String naoPreencheu = "";
   bool isEmpty(String v1,String v2,String v3){
     bool vazio = true;
-    if(v1.isNotEmpty && v2.isNotEmpty && v3.isNotEmpty){
+    if(v1.trim().isNotEmpty && v2.trim().isNotEmpty && v3.trim().isNotEmpty){
       vazio = false;
     }
     return vazio;
@@ -30,6 +30,7 @@ class _LoginState extends State<Login> {
     return Scaffold(
       drawer: CpDrawer(),
       appBar: AppBar(  
+        bottomOpacity: 0.1,
         title: const Text("Form Search", style: TextStyle(),textAlign: TextAlign.center,),
         actions: [
           InstanceTema(),
@@ -58,7 +59,9 @@ class _LoginState extends State<Login> {
                 hintText: "Senha", 
                 labelText: "SENHA",
                 border:InputBorder.none, 
-                icon: Icon(Icons.key))
+                icon: Icon(Icons.key),
+                ),
+            obscureText: true,
           ),
           TextFormField(
             controller: controllerContato,

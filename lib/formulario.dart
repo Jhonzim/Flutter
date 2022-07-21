@@ -1,5 +1,5 @@
 import 'dart:html';
-
+import 'Componentes/bottomnavigation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -81,10 +81,12 @@ class _FormularioState extends State<Formulario> {
                                       height: 30,
                                       child: ListTile(
                                         title: const Text("Talvez"),
+
                                         leading: Radio(value: SingingCharacter.opt3, groupValue: character, onChanged: (SingingCharacter? value) => 
                                           setState(() {
                                             character = value;
-                                          })),
+                                          }),
+                                          ),
                                       ),
                                     )
                                   ],
@@ -137,7 +139,34 @@ class _FormularioState extends State<Formulario> {
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       children: [
                                       
-                                      
+                                        Card(
+                                        color:Color.fromARGB(131, 110, 109, 109),
+                                        child: Column(
+                                        children: [
+                                          Checkbox(value: Respostas.resposta.box1, onChanged: (value){
+                                            setState(() {
+                                              Respostas.resposta.box1 = !Respostas.resposta.box1;
+                                            });
+                                          },),
+                                          Checkbox(value: Respostas.resposta.box2, onChanged: (value){
+                                            setState(() {
+                                              Respostas.resposta.box2 = !Respostas.resposta.box2;
+                                            });
+                                          },),
+                                          Checkbox(value: Respostas.resposta.box3, onChanged: (value){
+                                              setState(() {
+                                                Respostas.resposta.box3 = !Respostas.resposta.box3;
+                                              });
+                                            },), 
+                                          Checkbox(value: Respostas.resposta.box4, onChanged: (value){
+                                            setState(() {
+                                              Respostas.resposta.box4 = !Respostas.resposta.box4;
+                                            });
+                                          },),
+                                        ],
+                                                                      ),
+                                      ),
+                                      //SizedBox(width: 20,),
                                         Column(
                                           mainAxisAlignment: MainAxisAlignment.start,
                                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -192,34 +221,8 @@ class _FormularioState extends State<Formulario> {
                                           ),
                                         ],),
                                       
-                                      SizedBox(width: 20,),
-                                      Card(
-                                        color:Color.fromARGB(131, 110, 109, 109),
-                                        child: Column(
-                                        children: [
-                                          Checkbox(value: Respostas.resposta.box1, onChanged: (value){
-                                            setState(() {
-                                              Respostas.resposta.box1 = !Respostas.resposta.box1;
-                                            });
-                                          },),
-                                          Checkbox(value: Respostas.resposta.box2, onChanged: (value){
-                                            setState(() {
-                                              Respostas.resposta.box2 = !Respostas.resposta.box2;
-                                            });
-                                          },),
-                                          Checkbox(value: Respostas.resposta.box3, onChanged: (value){
-                                              setState(() {
-                                                Respostas.resposta.box3 = !Respostas.resposta.box3;
-                                              });
-                                            },), 
-                                          Checkbox(value: Respostas.resposta.box4, onChanged: (value){
-                                            setState(() {
-                                              Respostas.resposta.box4 = !Respostas.resposta.box4;
-                                            });
-                                          },),
-                                        ],
-                                                                      ),
-                                      ),
+                                      
+                                      
                                       
                                     
                                     ],),
@@ -262,6 +265,7 @@ class _FormularioState extends State<Formulario> {
           child: Icon(Icons.send),
 
         ),
+      bottomNavigationBar: EstateNavigation(),
       );
   }
 }

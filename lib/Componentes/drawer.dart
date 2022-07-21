@@ -1,6 +1,7 @@
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
+import 'package:primeiro_aplicativo/Componentes/bottomnavigation.dart';
 import 'package:primeiro_aplicativo/Componentes/tema.dart';
 import '../Classes/usuarios.dart';
 
@@ -37,7 +38,7 @@ class _CpDrawerState extends State<CpDrawer> {
                       height: 40,
                       child: Card(
                         child: GestureDetector(
-                          onTap: () => Navigator.pop(context),
+                          onTap: () {Navigator.pop(context);},
                           child: const Icon(Icons.settings)),
                       ),
                     ),
